@@ -47,13 +47,10 @@
 
   .yt-bg {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 56.25vw; /* 16:9 */
-    min-height: 100vh;
-    min-width: 177.78vh; /* 16:9 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
@@ -62,14 +59,15 @@
   .yt-bg video {
     width: 100%;
     height: 100%;
-    border: none;
     object-fit: cover;
+    display: block;
+    filter: brightness(1.1) contrast(1.1) saturate(1.05);
   }
 
   .yt-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(10, 11, 16, 0.55);
+    background: rgba(10, 11, 16, 0.35);
     z-index: 0;
     pointer-events: none;
   }
@@ -644,7 +642,8 @@
     loop
     playsinline
     disablepictureinpicture
-    disableremoteplayback>
+    disableremoteplayback
+    preload="auto">
   </video>
 </div>
 <div class="yt-overlay"></div>
